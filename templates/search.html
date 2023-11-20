@@ -1,0 +1,39 @@
+
+
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block heading %}
+
+{% endblock %}
+
+{% block content%}
+
+     <p>     </p>
+     <p></p>
+
+     <p></p>
+
+     <form method="POST" action="{{ url_for('search_results') }}">
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type">
+
+        <label for="gender">Gender:</label>
+        <input type="text" name="gender" id="gender">
+
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age">
+
+        <label for="size">Size:</label>
+        <input type="text" name="size" id="size">
+
+        <button type="submit">Search</button>
+    </form>
+
+
+     <br>
+     <br>
+        
+
+        {% endblock %}

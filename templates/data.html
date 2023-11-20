@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block heading %}
+
+{% endblock %}
+
+{% block content%}
+
+<h1>Pets</h1>
+<ul>
+{% for pet in data['animals'] %}
+    <li>{{ pet['name'] }} - {{ pet['species'] }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

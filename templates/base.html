@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %} {% endblock %} - Oregon Pet Search </title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />  
+</head>
+<body>
+    
+
+  <h1><center>Welcome to Oregon Pet Search!</h1> </center>
+  <br>
+  <p>
+  </p>
+  <p> 
+  <center>Come find your new pet with us! We will search through the shelters in
+      Oregon to find the perfect pet to adopt! Always free to search!
+  </p>
+  <p>
+      By adopting, you will be saving the life of an animal who will love you!
+      <br>
+      Shelters are always crowded with hundreds of animals are in need of a home. 
+
+      <br>
+      <br>
+
+    <div>
+        <ul style="list-style-type: none;float: right;font-size: large;">
+            <li style="display:inline"><a href="{{url_for('homepage')}}">Home</a></li>
+            <li style="display:inline"><a href="{{url_for('search')}}">Search</a></li>
+            {% if 'user' in session %}
+            <li style="display:inline"><a href="{{url_for('logout')}}">Log Out</a></li>
+            {% else %}
+            <li style="display:inline"><a href="{{url_for('signup')}}">Sign Up</a></li>
+            <li style="display:inline"><a href="{{url_for('login')}}">Login</a></li>
+            {% endif%}
+        </ul>
+    </div>
+    <h1 id="title"> {% block heading %} {% endblock %} </h1>
+    <div id="content">
+        {% block content %} {% endblock %}
+    </div>
+    <div id="footer">
+        {% block footer %}
+        <center>
+            <p>Click <a href = "./donate">here to donate</a> to help more animals find their furever home!</p>
+            <p>Questions? Comments? <a href = "./contact-us"> Contact us! </a> </p>
+            </center>
+        {% endblock %}
+    </div>
+</body>
+</html>

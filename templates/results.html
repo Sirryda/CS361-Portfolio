@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block heading %}
+
+{% endblock %}
+
+{% block content%}
+
+{% if pets_data %}
+<ul>
+    {% for pet in pets_data %}
+        <li>
+            <p>Name: {{ pet.name }}</p>
+            <p>Type: {{ pet.type }}</p>
+            <p>Gender: {{ pet.gender }}</p>
+            <!-- Add more details as needed -->
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No results found.</p>
+{% endif %}
+        
+
+        {% endblock %}
